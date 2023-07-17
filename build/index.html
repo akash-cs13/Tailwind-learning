@@ -1,30 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="sm:scroll-smooth">
+<html lang="en" class="md:scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acme Rockets</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
   </head>
   <body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
     <header class="sticky top-0 z-10 bg-teal-700 text-white">
+
       <section class="mx-auto flex max-w-4xl items-center justify-between p-4">
         <h1 class="text-3xl font-medium">
           <a href="#hero"> 🚀 Acme Rockets </a>
         </h1>
         <div>
           <button
-            id="mobile-open-button"
-            class="text-3xl focus:outline-none sm:hidden"
+            id="hamburger-button"
+            class="text-3xl cursor-pointer md:hidden relative w-8 h-8"
           >
-            &#9776;
+            <!-- &#9776; -->
+            <div class="bg-white w-8 h-1 rounded absolute top-4 -mt-0.5 before:content-['']  before:bg-white before:h-1 before:rounded before:w-8 before:absolute transition-all duration-500 before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-['']  after:bg-white after:h-1 after:rounded after:w-8 after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500"></div>
           </button>
-          <nav class="hidden space-x-8 text-xl sm:block" aria-label="main">
+          <nav class="hidden space-x-8 text-xl md:block" aria-label="main">
             <a href="#rockets" class="hover:opacity-90">Our Rockets</a>
             <a href="#testimonials" class="hover:opacity-90">Testimonials</a>
             <a href="#contact" class="hover:opacity-90">Contact Us</a>
           </nav>
         </div>
+      </section>
+      <section id="mobile-menu" class="absolute top-68 bg-black w-full text-5xl flex flex-col justify-content-center origin-top animate-open-menu hidden">
+        <!-- <button class="text-8xl self-end px-6">&times;</button> -->
+        <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
+          <a href="#hero" class="w-full text-center py-6 hover:opacity-90">Home</a>
+          <a href="#rockets" class="w-full text-center py-6 hover:opacity-90">Rockets</a>
+          <a href="#testimonials" class="w-full text-center py-6 hover:opacity-90">Testimonials</a>
+          <a href="#contact" class="w-full text-center py-6 hover:opacity-90">Contact Us</a>
+          <a href="#footer" class="w-full text-center py-6 hover:opacity-90">Legal</a>
+
+        </nav>
       </section>
     </header>
     <main class="mx-auto max-w-4xl">
@@ -58,7 +72,7 @@
       </section>
       <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
 
-      <section id="rockets" class="my-12 scroll-mt-20 p-6 widescreen:section-min-height tallscreen:section-min-height">
+      <section id="rockets" class="my-12 scroll-mt-20 p-6 widescreen:section-min-height tallscreen:section-min-height flex flex-col justify-center">
         <h2
           class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
         >
@@ -184,7 +198,7 @@
       </section>
       <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
 
-      <section id="contact" class="my-12 p-6 scroll-mt-16 widescreen:section-min-height tallscreen:section-min-height">
+      <section id="contact" class="my-12 p-6 scroll-mt-16 ">
         <h2
           class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
         >
@@ -192,7 +206,7 @@
         </h2>
         <form action="" class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-start gap-4">
           <label for="subject">Subject:</label>
-          <input type="text" id="subject" name="subject" required minlength="3" maxlength="60" placeholder="Your subject" class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none">
+          <input type="text" id="subject" name="subject" required minlength="3" maxlength="60" placeholder="Your subject" class="w-full text-black text-2xl sm:text-3xl rounded-xl border-solid border-slate-900 dark:border-none p-3">
           <label for="message">Message:</label>
           <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message" required class="w-full text-black text-2xl sm:text-3xl rounded-xl border-solid border-slate-900 dark:border-none p-3"></textarea>
           <button class="bg-teal-700 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded-xl border-solid border-slate-600 dark:border-none">Submit</button>
@@ -226,4 +240,4 @@
   </body>
 </html>
 
-<!-- https://www.youtube.com/watch?v=lCxcTsOHrjo -->
+
